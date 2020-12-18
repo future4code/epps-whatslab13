@@ -1,35 +1,47 @@
 import React from "react";
 import sltyled from "styled-components"
 
-
-
 const Container = sltyled.div`
-  background-: grey;
-  border: 1px solid black;
+  border: 1px solid lightblue;
+  background-color:lightblue;
   height: 100vh;
   box-sizing: border-box;
   width: 600px;
   margin: auto;
   display: flex;
-  flex-direction: column;
-`;
-
-const Titulo = sltyled.h1`
-  background-: grey;
-  text-aling: center;
-  display: flex;
+  flex-direction: column-reverse;
 `;
 
 const Botao = sltyled.button`
   height: 30px;
-  width: 100px;
-  border-radius: 20px;
-  background-color: grey;
-  color: pink;
+  width: 60px;
+  background-color:  lightblue;
+  color: white;
+  display: flex;
+  align-items: center;
 `;
-// const Caixa = sltyled.valorInputMensagem`
+const Caixa = sltyled.div`
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column-reverse;
+`
+const ImputeM = sltyled.div`
+  display: flex;
+  
+`
+const Nome = sltyled.input`
+  width: 100px;
+  padding: 5px;
+  
+  
+`
+const Mensagem = sltyled.input`
+  flex-grow: 1;
+  
+  padding: 5px;
 
-// `
+`
 
 
 
@@ -88,24 +100,27 @@ render() {
   return (
     <Container className="App">
       
-      <Titulo>Whatslab</Titulo>
+      <Caixa>
       
-      <div>
-      <input 
+      <ImputeM>
+      <Nome
             
       value = {this.state.valorInputUsuario} 
       onChange={this.onChangeInputUsuario}
       placeholder = {"Usuário"}
       />
 
-      <input 
+      <Mensagem  
       value = {this.state.valorInputMensagem} 
       onChange={this.onChangeInputMensagem} 
       placeholder = {"Mensagem"} />
+
+     
   
 
       <Botao onClick={this.adicionaComent}>Enviar</Botao>
-      </div>
+      </ImputeM>
+      </Caixa>
       
       <div>{postCompleto}</div>
       
